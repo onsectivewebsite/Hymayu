@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services — Indus Canada CPA</title>
+    <meta name="description" content="Personal & corporate tax, bookkeeping, payroll, CRA representation, incorporation, real estate tax, non-resident tax, DTC, charitable services, and outsourced CFO.">
+    <link rel="icon" href="assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .svc-detail { padding: 5rem 0; border-bottom: 1px solid var(--gray-100); }
+        .svc-detail:nth-child(even) { background: var(--cream); }
+        .svc-detail .grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: center; }
+        .svc-detail.flip .grid { direction: rtl; }
+        .svc-detail.flip .grid > * { direction: ltr; }
+        .svc-icon-card {
+            background: var(--ink);
+            color: var(--white);
+            padding: 3.5rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--red);
+        }
+        .svc-icon-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(184,37,58,0.18), transparent 70%);
+        }
+        .svc-icon-card .ico {
+            position: relative;
+            width: 90px; height: 90px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: grid; place-items: center;
+            font-size: 2.4rem;
+            color: var(--red-light);
+            margin: 0 auto 1.5rem;
+        }
+        .svc-icon-card h4 { color: var(--white); font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; position: relative; letter-spacing: -0.01em; }
+        .svc-icon-card p { color: rgba(255,255,255,0.65); font-size: 0.9rem; position: relative; margin-top: 0.6rem; line-height: 1.5; }
+        .svc-detail h2 { margin-bottom: 1.2rem; font-weight: 500; }
+        .svc-detail .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            color: var(--red);
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            margin-bottom: 0.6rem;
+        }
+        .svc-detail .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--red); }
+        .svc-list { margin-top: 1.8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem 1.8rem; }
+        .svc-list .item { display: flex; gap: 0.7rem; align-items: flex-start; font-size: 0.95rem; color: var(--gray-800); }
+        .svc-list .item i { color: var(--red); margin-top: 0.25rem; flex-shrink: 0; }
+        @media (max-width: 768px) {
+            .svc-detail .grid { grid-template-columns: 1fr; }
+            .svc-detail.flip .grid { direction: ltr; }
+            .svc-list { grid-template-columns: 1fr; }
+            .svc-icon-card { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="container">
+        <div class="topbar-info">
+            <span><i class="bi bi-geo-alt-fill"></i> Unit #17 A, 7033 Telford Way, Mississauga ON</span>
+            <span><i class="bi bi-clock-fill"></i> Mon–Fri 9:00am – 6:00pm</span>
+            <span><i class="bi bi-envelope-fill"></i> info@induscanadacpa.ca</span>
+        </div>
+        <div class="topbar-social"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a></div>
+    </div>
+</div>
+
+<nav class="nav">
+    <div class="container nav-inner">
+        <a href="index.html" class="brand"><img src="assets/logo.png" alt=""><div class="brand-text"><strong>Indus Canada</strong><small>Chartered Professional Accountant</small></div></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="calculators.html">Calculators</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Book Consultation</a></li>
+        </ul>
+        <button class="menu-toggle"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Our Services</h1>
+        <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Services</div>
+        <p class="lead">From routine bookkeeping to complex corporate restructuring — sixteen specialized service lines, one trusted firm.</p>
+    </div>
+</section>
+
+<!-- Service Cards Grid (overview) -->
+<section class="services-bg">
+    <div class="container">
+        <div class="services-grid">
+            <a href="#personal-tax" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-person-badge"></i></div><h3>Personal Tax</h3><p>T1 returns optimized to minimize liabilities.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#corporate" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-buildings"></i></div><h3>Corporate Tax</h3><p>T2 returns and corporate tax planning.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#bookkeeping" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-journal-text"></i></div><h3>Bookkeeping</h3><p>QuickBooks, Xero, and Sage cleanup & monthly close.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#payroll" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-people-fill"></i></div><h3>Payroll Services</h3><p>Direct deposits, T4s, ROEs, source deductions.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#cra" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-shield-fill-check"></i></div><h3>CRA Audits</h3><p>Representation during audits and disputes.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#incorporation" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-building-fill"></i></div><h3>Incorporation</h3><p>Federal/Ontario incorporation and structuring.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#cfo" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-graph-up"></i></div><h3>Outsourced CFO</h3><p>Forecasts, KPIs, and board-ready reporting.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#financial-statements" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-file-earmark-text"></i></div><h3>Compiled Statements</h3><p>NTR financial statements for owner-managed businesses.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#real-estate" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-house-fill"></i></div><h3>Real Estate Tax</h3><p>Flips, principal residence, rental, and rebates.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#hst" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-receipt"></i></div><h3>HST / WSIB</h3><p>Registrations, returns, ITC reviews, and disputes.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#non-resident" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-globe-americas"></i></div><h3>Non-Resident Tax</h3><p>S.216, S.217, NR4/NR6, and US/Canada cross-border.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#dtc" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-heart-pulse-fill"></i></div><h3>Disability Tax Credit</h3><p>DTC certification and retroactive claims.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#new-housing" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-house-add-fill"></i></div><h3>New Housing Rebate</h3><p>GST/HST new housing rebate filings.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#nfp" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-people"></i></div><h3>Not-For-Profit</h3><p>NPO accounting and T1044 filings.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#charity" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-heart-fill"></i></div><h3>Charity Registration</h3><p>Charitable status and T3010 filings.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+            <a href="#forecast" class="service-card reveal" style="text-decoration:none;"><div class="icon"><i class="bi bi-bar-chart-fill"></i></div><h3>Business Forecasts</h3><p>3-statement models and bank-ready projections.</p><span class="more">View details <i class="bi bi-arrow-right"></i></span></a>
+        </div>
+    </div>
+</section>
+
+<!-- Detailed Sections -->
+<section class="svc-detail" id="personal-tax">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-person-badge"></i></div><h4>Personal Tax</h4><p>From simple T1s to complex multi-source returns</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">01 / Personal Taxation</span>
+                <h2>Personal Tax Services</h2>
+                <p>Whether you're an employee, self-employed, an investor, or filing for a deceased family member — our team prepares accurate, optimized T1 returns and applies every credit and deduction available to you.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>T1 employment & self-employed returns</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Rental income (T776) & capital gains</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Foreign income & T1135 disclosures</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Prior-year & adjustment requests</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>RRSP, TFSA, FHSA strategy</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Final T1 / estate returns</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail flip" id="corporate">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-buildings"></i></div><h4>Corporate Tax</h4><p>T2 returns & strategic tax planning</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">02 / Corporate Taxation</span>
+                <h2>Corporate Tax Services</h2>
+                <p>We prepare T2 corporate income tax returns, advise on the most tax-efficient structures, and help owner-managers optimize compensation between salary, dividends, and retained earnings.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>T2 corporate returns (CCPC & general)</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Small business deduction planning</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Salary vs dividend optimization</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Section 85 / 86 rollovers</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Holding company structures</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>SR&ED / investment tax credits</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail" id="bookkeeping">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-journal-text"></i></div><h4>Bookkeeping</h4><p>Clean books, every month, on time</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">03 / Bookkeeping</span>
+                <h2>Bookkeeping Services</h2>
+                <p>Outsource your books to a team that closes within 10 days of month-end. We work in QuickBooks Online, Xero, and Sage — using Dext and HubDoc to digitize every receipt.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Catch-up & cleanup engagements</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Monthly bookkeeping & reconciliations</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Accounts payable & receivable</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>HST/GST tracking & filing</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Monthly P&L and balance sheet</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Year-end file ready for CPA</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail flip" id="payroll">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-people-fill"></i></div><h4>Payroll</h4><p>Pay your team accurately, every time</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">04 / Payroll</span>
+                <h2>Payroll Services</h2>
+                <p>Full-service payroll for Ontario employers. We handle direct deposits, source deductions, ROEs, T4s, and remittances so you can focus on running the business.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Bi-weekly / semi-monthly / monthly pay runs</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Direct deposit & pay stubs</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>CRA source-deduction remittance</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>WSIB & EHT filings</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>T4 / T4A annual reporting</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>ROE issuance via Service Canada</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail" id="cra">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-shield-fill-check"></i></div><h4>CRA Representation</h4><p>You're not alone in front of CRA</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">05 / CRA Audits & Disputes</span>
+                <h2>CRA Audits & Representation</h2>
+                <p>If you've received a CRA notice, don't ignore it. We represent you through every stage — from the initial review to formal objection and tax court appeal.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Pre-assessment & post-assessment reviews</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Full CRA audits (income, HST, payroll)</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Notice of Objection (T400A)</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Voluntary Disclosure Program</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Taxpayer Relief & fairness</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Collection-hold negotiations</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail flip" id="incorporation">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-building-fill"></i></div><h4>Incorporation</h4><p>Start strong with the right structure</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">06 / Incorporation</span>
+                <h2>Incorporation & Business Structuring</h2>
+                <p>We incorporate federally or provincially and design the share structure that optimizes for tax, succession, and capital raising — typically completed in 5 business days.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Federal & Ontario incorporation</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Multiple share class structuring</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Family trust formation</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>HST / Payroll / WSIB account setup</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Minute book maintenance</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Annual return filings</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail" id="cfo">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-graph-up"></i></div><h4>Outsourced CFO</h4><p>Strategic finance, fractional cost</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">07 / Strategic Advisory</span>
+                <h2>Outsourced CFO Services</h2>
+                <p>Get the strategic finance leadership your business deserves without a full-time hire. We deliver dashboards, forecasts, and the analytical rigour your bank and investors expect.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>13-week cash-flow forecasts</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Annual budget & variance analysis</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>KPI dashboards & board packs</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Lender & investor reporting</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>M&A and exit-readiness</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Working-capital optimization</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail flip" id="financial-statements">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-file-earmark-text"></i></div><h4>Compiled Statements</h4><p>Notice-to-Reader financials</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">08 / Financial Reporting</span>
+                <h2>Compiled Financial Statements</h2>
+                <p>NTR (Notice to Reader) compilations under CSRS 4200 — what banks and CRA expect from owner-managed businesses.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>CSRS 4200 compilation engagements</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>ASPE financial statement prep</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Management-prepared financials</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Bank refinancing packages</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail" id="real-estate">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-house-fill"></i></div><h4>Real Estate Tax</h4><p>Specialized taxation for property owners</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">09 / Real Estate</span>
+                <h2>Real Estate Tax Services</h2>
+                <p>Real estate has more tax traps than any other asset class. We help investors, flippers, and homeowners stay onside with CRA's anti-flipping rules while maximizing legitimate exemptions.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Principal residence exemption</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Anti-flipping rules planning</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Rental T776 & UCC management</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Section 116 dispositions</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Underused Housing Tax (UHT)</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Vacant Home Tax filings</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail flip" id="hst">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-receipt"></i></div><h4>HST / WSIB</h4><p>Indirect tax done right</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">10 / HST & WSIB</span>
+                <h2>HST / WSIB Returns</h2>
+                <p>From your first HST registration to a quick-method election or full HST audit defence, we handle the full lifecycle of indirect tax compliance.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>HST/GST registration</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Monthly / quarterly / annual returns</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Quick method elections</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>WSIB premium reporting</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>EHT remittance</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail" id="non-resident">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-globe-americas"></i></div><h4>Non-Resident Tax</h4><p>Cross-border specialists</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">11 / Non-Residents</span>
+                <h2>Tax Solutions for Non-Residents</h2>
+                <p>If you live abroad but own Canadian property, earn Canadian income, or are leaving Canada, we handle the specialized filings that domestic firms don't.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Section 216 rental returns</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Section 217 elections</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>NR4 / NR6 filings</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Section 116 clearance</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Departure tax planning</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>US-Canada cross-border returns</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail flip" id="dtc">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-heart-pulse-fill"></i></div><h4>Disability Tax Credit</h4><p>Unlock retroactive refunds</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">12 / DTC</span>
+                <h2>Disability Tax Credit Services</h2>
+                <p>The DTC is one of the most under-claimed credits in Canada. Many of our clients have received retroactive refunds going back up to 10 years.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>T2201 application preparation</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Coordination with your physician</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Retroactive T1 adjustments (10 yrs)</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>RDSP eligibility planning</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail" id="new-housing">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-house-add-fill"></i></div><h4>New Housing Rebate</h4><p>Up to $30,300 back from CRA</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">13 / Housing</span>
+                <h2>New Housing GST/HST Rebate</h2>
+                <p>If you bought a new build or substantially renovated your home, you may be entitled to thousands in rebates. We file these claims and defend them under CRA review.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>GST/HST New Housing Rebate</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>New Residential Rental Rebate</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Substantial renovation rebates</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>CRA review representation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail flip" id="nfp">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-people"></i></div><h4>Not-For-Profit</h4><p>Specialized accounting for NPOs</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">14 / Not-For-Profit</span>
+                <h2>Not-For-Profit Accounting</h2>
+                <p>Not-for-profit accounting requires specialized knowledge of fund accounting, donor restrictions, and the T1044 information return — areas we know well.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>T1044 information returns</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>ASNPO financial statements</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Fund accounting setup</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Annual budget & board reporting</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail" id="charity">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-heart-fill"></i></div><h4>Charity Registration</h4><p>From application to compliance</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">15 / Charity</span>
+                <h2>Charitable Registration Services</h2>
+                <p>Becoming a registered charity opens donor receipting and grant funding. We guide you through CRA's charity application and ongoing compliance.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Charity registration application</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>T3010 annual returns</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Donor receipting compliance</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Disbursement quota planning</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="svc-detail flip" id="forecast">
+    <div class="container">
+        <div class="grid">
+            <div class="reveal"><div class="svc-icon-card"><div class="ico"><i class="bi bi-bar-chart-fill"></i></div><h4>Business Forecasts</h4><p>Numbers that tell the right story</p></div></div>
+            <div class="reveal">
+                <span class="eyebrow">16 / Forecasts</span>
+                <h2>Business Forecasts</h2>
+                <p>Whether you're applying for financing or building a 5-year strategic plan, we build defensible forecasts that lenders, investors, and boards actually trust.</p>
+                <div class="svc-list">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>3-statement integrated models</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Bank-ready loan projections</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>5-year strategic plans</div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i>Sensitivity & scenario analysis</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div class="container">
+        <h2>Not sure which service you need?</h2>
+        <p>Tell us your situation in a free 30-minute call and we'll point you in the right direction — no obligation.</p>
+        <a href="contact.html" class="btn btn-primary"><i class="bi bi-chat-dots-fill"></i> Talk to a CPA</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="brand"><img src="assets/logo.png" alt=""><div class="brand-text"><strong>Indus Canada</strong><small style="color: var(--gold);">Chartered Professional Accountant</small></div></a>
+                <p>Trusted CPAs in Mississauga & GTA. 20+ years of expertise.</p>
+                <div class="footer-socials"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-linkedin"></i></a><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a></div>
+            </div>
+            <div><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div><h5>Services</h5><ul><li><a href="#personal-tax">Personal Tax</a></li><li><a href="#corporate">Corporate Tax</a></li><li><a href="#bookkeeping">Bookkeeping</a></li><li><a href="#payroll">Payroll</a></li><li><a href="calculators.html">Calculators</a></li></ul></div>
+            <div>
+                <h5>Get in Touch</h5>
+                <div class="contact-row"><i class="bi bi-geo-alt-fill"></i><span>Unit #17 A, 7033 Telford Way, Mississauga ON L5S 1V4</span></div>
+                <div class="contact-row"><i class="bi bi-telephone-fill"></i><a href="tel:+16475884441">+1 (647) 588-4441</a></div>
+                <div class="contact-row"><i class="bi bi-envelope-fill"></i><a href="mailto:info@induscanadacpa.ca">info@induscanadacpa.ca</a></div>
+            </div>
+        </div>
+        <div class="footer-bottom"><span>© <span data-year></span> Indus Canada CPA. All rights reserved.</span><span>Mississauga · Toronto · GTA</span></div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

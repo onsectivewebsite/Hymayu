@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indus Canada CPA — Trusted Chartered Professional Accountants in Mississauga</title>
+    <meta name="description" content="Indus Canada CPA — 20+ years of expertise in personal & corporate taxation, bookkeeping, payroll, CRA representation, and business advisory in Mississauga, Toronto, and the GTA.">
+    <link rel="icon" href="assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Top Bar ===== -->
+<div class="topbar">
+    <div class="container">
+        <div class="topbar-info">
+            <span><i class="bi bi-geo-alt-fill"></i> Unit #17 A, 7033 Telford Way, Mississauga ON</span>
+            <span><i class="bi bi-clock-fill"></i> Mon–Fri 9:00am – 6:00pm</span>
+            <span><i class="bi bi-envelope-fill"></i> info@induscanadacpa.ca</span>
+        </div>
+        <div class="topbar-social">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav">
+    <div class="container nav-inner">
+        <a href="index.html" class="brand">
+            <img src="assets/logo.png" alt="Indus Canada CPA">
+            <div class="brand-text">
+                <strong>Indus Canada</strong>
+                <small>Chartered Professional Accountant</small>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="calculators.html">Calculators</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Book Consultation</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <span class="hero-eyebrow">Established Mississauga · Two Decades of Trust</span>
+                <h1>Numbers that <span class="accent">build futures.</span></h1>
+                <p class="lead">For over twenty years, Indus Canada CPA has guided individuals, entrepreneurs, and corporations across the Greater Toronto Area toward financial clarity — through expert taxation, accounting, and advisory grounded in academic rigour.</p>
+                <div class="hero-cta">
+                    <a href="contact.html" class="btn btn-primary">Book a Free Consultation</a>
+                    <a href="services.html" class="btn btn-ghost">Explore Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><strong data-count="20" data-suffix="+">0</strong><span>Years</span></div>
+                    <div class="stat"><strong data-count="18923">0</strong><span>Clients Served</span></div>
+                    <div class="stat"><strong data-count="16" data-suffix="">0</strong><span>Specialties</span></div>
+                </div>
+            </div>
+            <div class="hero-portrait">
+                <div class="portrait-chip">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    <div>
+                        <strong>PhD · CPA · MBA · LLM</strong>
+                        <small>Six-credential firm</small>
+                    </div>
+                </div>
+                <div class="portrait-frame">
+                    <img src="assets/humayun.jpg" alt="Dr. Humayun Chaudhary, Founder & Principal">
+                </div>
+                <div class="portrait-nameplate">
+                    <strong>Dr. Humayun Chaudhary</strong>
+                    <span>Founder &amp; Principal CPA</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Brand Marquee ===== -->
+<section class="marquee-section">
+    <div class="container marquee-head">
+        <span class="marquee-eyebrow">Trusted by <strong>18,923</strong> clients across Canada</span>
+        <span class="marquee-line"></span>
+        <span class="marquee-tag">Real estate · Tech · Healthcare · Hospitality · Manufacturing · NPOs</span>
+    </div>
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track" id="marquee-track"></div>
+    </div>
+</section>
+
+<!-- ===== Admin Modal (login + brand management) ===== -->
+<div class="admin-modal-backdrop" id="admin-backdrop">
+    <div class="admin-modal" role="dialog" aria-labelledby="admin-title">
+        <button class="admin-close" id="admin-close" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+
+        <!-- Login view -->
+        <div class="admin-view" id="login-view">
+            <div class="admin-icon"><i class="bi bi-shield-lock"></i></div>
+            <h3 id="admin-title">Admin Access</h3>
+            <p>Sign in to manage the brand showcase displayed on the homepage.</p>
+            <form id="login-form">
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" id="login-user" autocomplete="username" required placeholder="admin">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" id="login-pass" autocomplete="current-password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+                <p class="form-error" id="login-error"></p>
+                <p class="form-hint">Demo credentials: <code>admin</code> / <code>indus2026</code></p>
+            </form>
+        </div>
+
+        <!-- Panel view -->
+        <div class="admin-view" id="panel-view" hidden>
+            <div class="admin-panel-head">
+                <div>
+                    <h3>Brand Showcase</h3>
+                    <p>Add, remove, or reorder the brands displayed in the homepage marquee.</p>
+                </div>
+                <button class="admin-logout" id="admin-logout"><i class="bi bi-box-arrow-right"></i> Sign Out</button>
+            </div>
+
+            <form id="brand-add-form" class="brand-add-form">
+                <div class="field-row">
+                    <div class="field">
+                        <label>Brand Name</label>
+                        <input type="text" id="brand-name" required placeholder="Sunridge Realty" maxlength="40">
+                    </div>
+                    <div class="field">
+                        <label>Icon Style</label>
+                        <select id="brand-icon">
+                            <option value="bi-building">Building</option>
+                            <option value="bi-bank2">Bank</option>
+                            <option value="bi-shop">Shop</option>
+                            <option value="bi-house-fill">House</option>
+                            <option value="bi-truck">Logistics</option>
+                            <option value="bi-cpu-fill">Tech</option>
+                            <option value="bi-heart-pulse-fill">Healthcare</option>
+                            <option value="bi-laptop">Software</option>
+                            <option value="bi-globe">Global</option>
+                            <option value="bi-briefcase-fill">Services</option>
+                            <option value="bi-cup-hot-fill">Hospitality</option>
+                            <option value="bi-tree-fill">Sustainable</option>
+                            <option value="bi-gear-fill">Industrial</option>
+                            <option value="bi-mortarboard-fill">Education</option>
+                            <option value="bi-airplane-fill">Travel</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Add Brand</button>
+            </form>
+
+            <div class="brand-list-head">
+                <strong>Current brands</strong>
+                <span id="brand-count">0</span>
+            </div>
+            <ul class="brand-list" id="brand-list"></ul>
+        </div>
+    </div>
+</div>
+
+<!-- ===== Feature Strip ===== -->
+<section class="features" style="padding: 4rem 0;">
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature reveal">
+                <div class="icon"><i class="bi bi-patch-check-fill"></i></div>
+                <h4>Certified Experts</h4>
+                <p>CPA, CGMA, FCCA, and PhD-level expertise on every engagement.</p>
+            </div>
+            <div class="feature reveal">
+                <div class="icon"><i class="bi bi-shield-lock-fill"></i></div>
+                <h4>Confidential & Secure</h4>
+                <p>Bank-grade encryption and strict confidentiality protocols protect your data.</p>
+            </div>
+            <div class="feature reveal">
+                <div class="icon"><i class="bi bi-headset"></i></div>
+                <h4>Personal Attention</h4>
+                <p>You speak directly to your accountant — never a call centre.</p>
+            </div>
+            <div class="feature reveal">
+                <div class="icon"><i class="bi bi-currency-dollar"></i></div>
+                <h4>Transparent Pricing</h4>
+                <p>Fixed-fee engagements with no surprise invoices, ever.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="services-bg">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">What We Do</span>
+            <h2>Comprehensive Accounting Services</h2>
+            <p>From your first tax return to a multi-million-dollar restructuring, we deliver clarity, compliance, and strategic insight at every stage.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="icon"><i class="bi bi-calculator-fill"></i></div>
+                <h3>Personal & Corporate Tax</h3>
+                <p>T1, T2, and T3 returns prepared by tax specialists — optimized to legally minimize your liability.</p>
+                <a href="services.html#personal-tax" class="more">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="service-card reveal">
+                <div class="icon"><i class="bi bi-journal-text"></i></div>
+                <h3>Bookkeeping</h3>
+                <p>Reliable monthly bookkeeping in QuickBooks, Xero, and Sage — closed within 10 days of month-end.</p>
+                <a href="services.html#bookkeeping" class="more">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="service-card reveal">
+                <div class="icon"><i class="bi bi-people-fill"></i></div>
+                <h3>Payroll Services</h3>
+                <p>Full payroll management — direct deposits, T4s, ROEs, source deductions, and WSIB.</p>
+                <a href="services.html#payroll" class="more">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="service-card reveal">
+                <div class="icon"><i class="bi bi-shield-fill-check"></i></div>
+                <h3>CRA Audits & Representation</h3>
+                <p>Strong representation during CRA audits, reviews, objections, and taxpayer relief filings.</p>
+                <a href="services.html#cra" class="more">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="service-card reveal">
+                <div class="icon"><i class="bi bi-building-fill"></i></div>
+                <h3>Incorporation & Structuring</h3>
+                <p>Federal or Ontario incorporation, share structures, and HST/payroll account setup in 5 days.</p>
+                <a href="services.html#incorporation" class="more">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="service-card reveal">
+                <div class="icon"><i class="bi bi-graph-up"></i></div>
+                <h3>Outsourced CFO</h3>
+                <p>Cash-flow forecasts, KPI dashboards, and board-ready reporting at a fraction of full-time cost.</p>
+                <a href="services.html#cfo" class="more">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="service-card reveal">
+                <div class="icon"><i class="bi bi-house-fill"></i></div>
+                <h3>Real Estate Tax</h3>
+                <p>Flips, principal residence, rental T776, GST/HST new-housing rebates, and S.116 sales.</p>
+                <a href="services.html#real-estate" class="more">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="service-card reveal">
+                <div class="icon"><i class="bi bi-globe-americas"></i></div>
+                <h3>Non-Resident Tax</h3>
+                <p>Section 216, Section 217, NR4/NR6, departure tax, and US/Canada cross-border returns.</p>
+                <a href="services.html#non-resident" class="more">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="service-card reveal">
+                <div class="icon"><i class="bi bi-heart-pulse-fill"></i></div>
+                <h3>Disability Tax Credit</h3>
+                <p>DTC certifications and retroactive claims — recovering up to 10 years of refunds.</p>
+                <a href="services.html#dtc" class="more">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="services.html" class="btn btn-secondary">View All Services <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== About Preview ===== -->
+<section class="about-preview">
+    <div class="container">
+        <div class="about-grid">
+            <div class="reveal">
+                <div class="about-img-wrap">
+                    <img src="assets/humayun.jpg" alt="Dr. Humayun Chaudhary, Founder of Indus Canada CPA">
+                    <div class="about-badge">
+                        <strong>20+</strong>
+                        <span>Years of Experience</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-content reveal">
+                <span class="eyebrow" style="color: var(--gold-dark); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;">About Indus Canada CPA</span>
+                <h2 style="margin-top: 0.6rem;">Trusted advisors for every stage of your financial journey</h2>
+                <p>At Indus Canada Chartered Professional Accountant, our greatest strength lies in the diverse skills and expertise of our team. With deep knowledge in accounting, taxation, financial planning, and business advisory, we are equipped to handle everything from routine bookkeeping to complex corporate strategies.</p>
+                <p>By combining technical expertise with modern tools and a client-focused approach, we provide innovative solutions that empower individuals and businesses to achieve financial clarity and long-term success.</p>
+                <div class="about-features">
+                    <div class="item"><i class="bi bi-check-circle-fill"></i><div><strong>Senior CPAs</strong><small>Direct access, no juniors</small></div></div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i><div><strong>Modern Cloud Tools</strong><small>QBO, Xero, Dext, HubDoc</small></div></div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i><div><strong>Year-Round Support</strong><small>Not just at tax time</small></div></div>
+                    <div class="item"><i class="bi bi-check-circle-fill"></i><div><strong>Multilingual Service</strong><small>English, Urdu, Hindi, Punjabi</small></div></div>
+                </div>
+                <a href="about.html" class="btn btn-primary">Learn About Us <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Founder ===== -->
+<section class="founder">
+    <div class="container">
+        <div class="founder-grid">
+            <div class="reveal">
+                <div class="founder-img">
+                    <img src="assets/humayun.jpg" alt="Dr. Humayun Chaudhary, Founder & Principal">
+                </div>
+            </div>
+            <div class="reveal">
+                <span class="eyebrow" style="color: var(--gold-light); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;">Meet The Founder</span>
+                <h2 style="margin-top: 0.6rem;">Dr. Humayun Chaudhary</h2>
+                <div class="sub">PhD (Taxation), MBA, LLM, CPA</div>
+                <p>A distinguished professor, academic leader, and practicing accounting and tax professional with over two decades of combined experience in higher education, public policy, and professional practice.</p>
+                <p>Currently Professor of Accounting and Taxation at Sheridan College's Pilon School of Business, and Course Director at York University's School of Administrative Studies. Founder and principal of Indus Canada CPA.</p>
+                <div class="creds">
+                    <span class="cred"><i class="bi bi-mortarboard-fill"></i> PhD, Osgoode Hall</span>
+                    <span class="cred">CPA Ontario</span>
+                    <span class="cred">CPA USA</span>
+                    <span class="cred">CGMA</span>
+                    <span class="cred">FCCA (UK)</span>
+                    <span class="cred">CMA (UK)</span>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="about.html#founder" class="btn btn-ghost">Read Full Bio <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section>
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Client Stories</span>
+            <h2>What Our Clients Say</h2>
+            <p>From small business owners to seasoned investors — here's what working with Indus Canada CPA looks like.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial reveal">
+                <div class="quote">"</div>
+                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p>Dr. Chaudhary's team caught a CRA reassessment that another firm completely missed. They saved my construction company over $42,000. I will not work with anyone else.</p>
+                <div class="author">
+                    <div class="avatar">RS</div>
+                    <div><strong>Rajesh S.</strong><span>GTA Developer</span></div>
+                </div>
+            </div>
+            <div class="testimonial reveal">
+                <div class="quote">"</div>
+                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p>I switched my e-commerce books to Indus Canada and the difference is night and day. Real-time dashboards, proactive tax planning, and they actually answer the phone.</p>
+                <div class="author">
+                    <div class="avatar">AM</div>
+                    <div><strong>Aisha M.</strong><span>Founder, DTC Brand</span></div>
+                </div>
+            </div>
+            <div class="testimonial reveal">
+                <div class="quote">"</div>
+                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p>Their non-resident expertise is unmatched. They handled my Section 216 returns and rental property dispositions seamlessly while I was abroad. Truly a stress-free experience.</p>
+                <div class="author">
+                    <div class="avatar">DK</div>
+                    <div><strong>David K.</strong><span>UAE-based investor</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA Banner ===== -->
+<section class="cta-banner">
+    <div class="container">
+        <h2>Ready to take control of your finances?</h2>
+        <p>Book a free 30-minute consultation. No commitment, just clear answers.</p>
+        <a href="contact.html" class="btn btn-primary"><i class="bi bi-calendar-event"></i> Schedule Now</a>
+    </div>
+</section>
+
+<!-- ===== Blog Preview ===== -->
+<section class="services-bg">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Insights & Updates</span>
+            <h2>From Our Blog</h2>
+            <p>Practical accounting insights, tax-season reminders, and CRA updates from our team of CPAs.</p>
+        </div>
+        <div class="blog-grid">
+            <article class="blog-card reveal">
+                <div class="img"><i class="bi bi-receipt"></i></div>
+                <div class="body">
+                    <div class="meta"><span class="tag">Tax Tips</span><span><i class="bi bi-calendar3"></i> Apr 12, 2026</span></div>
+                    <h3>2026 Personal Tax Filing Deadlines & What's New</h3>
+                    <p>Key dates, the new digital services tax, and updated TFSA & RRSP limits you need to know before April 30.</p>
+                    <a href="blog/2026-tax-deadlines.html" class="more">Read article <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="blog-card reveal">
+                <div class="img"><i class="bi bi-house-heart"></i></div>
+                <div class="body">
+                    <div class="meta"><span class="tag">Real Estate</span><span><i class="bi bi-calendar3"></i> Apr 02, 2026</span></div>
+                    <h3>Flip Tax Rules: How the New Anti-Flipping Rules Affect You</h3>
+                    <p>If you've sold a property within 12 months, the gain is now business income. Here's how to plan around it.</p>
+                    <a href="blog/anti-flipping-rules.html" class="more">Read article <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="blog-card reveal">
+                <div class="img"><i class="bi bi-briefcase"></i></div>
+                <div class="body">
+                    <div class="meta"><span class="tag">Small Business</span><span><i class="bi bi-calendar3"></i> Mar 18, 2026</span></div>
+                    <h3>Salary vs Dividends: The 2026 Calculation</h3>
+                    <p>With CPP changes and new bracket adjustments, the math has shifted. We rerun the numbers for incorporated owners.</p>
+                    <a href="blog/salary-vs-dividends-2026.html" class="more">Read article <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="blog.html" class="btn btn-secondary">View All Articles <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="brand">
+                    <img src="assets/logo.png" alt="Indus Canada CPA">
+                    <div class="brand-text">
+                        <strong>Indus Canada</strong>
+                        <small style="color: var(--gold);">Chartered Professional Accountant</small>
+                    </div>
+                </a>
+                <p>Trusted CPAs in Mississauga & GTA. 20+ years of expertise serving individuals, entrepreneurs, and corporations across Canada.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html#founder">Meet the Founder</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="services.html#personal-tax">Personal Tax</a></li>
+                    <li><a href="services.html#corporate">Corporate Tax</a></li>
+                    <li><a href="services.html#bookkeeping">Bookkeeping</a></li>
+                    <li><a href="services.html#payroll">Payroll</a></li>
+                    <li><a href="services.html#cra">CRA Representation</a></li>
+                    <li><a href="calculators.html">Free Calculators</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Get in Touch</h5>
+                <div class="contact-row"><i class="bi bi-geo-alt-fill"></i><span>Unit #17 A, 7033 Telford Way, Mississauga ON L5S 1V4</span></div>
+                <div class="contact-row"><i class="bi bi-telephone-fill"></i><a href="tel:+16475884441">+1 (647) 588-4441</a></div>
+                <div class="contact-row"><i class="bi bi-envelope-fill"></i><a href="mailto:info@induscanadacpa.ca">info@induscanadacpa.ca</a></div>
+                <div class="contact-row"><i class="bi bi-clock-fill"></i><span>Mon–Fri: 9:00am – 6:00pm</span></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© <span data-year></span> Indus Canada CPA. All rights reserved. CPA Ontario Member Firm.</span>
+            <span>Mississauga · Toronto · GTA · <a href="#" id="admin-trigger" style="color: rgba(255,255,255,0.45);">Manage Brands</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/brands.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
