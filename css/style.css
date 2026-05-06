@@ -217,10 +217,10 @@ p { color: var(--gray-600); }
     border-color: var(--gray-300);
 }
 .btn-ghost:hover { border-color: var(--ink); background: var(--ink); color: var(--white); }
-.hero .btn-ghost, .founder .btn-ghost, .cta-banner .btn-ghost, .page-hero .btn-ghost {
+.founder .btn-ghost, .cta-banner .btn-ghost, .page-hero .btn-ghost {
     color: var(--white); border-color: rgba(255,255,255,0.4);
 }
-.hero .btn-ghost:hover, .founder .btn-ghost:hover, .cta-banner .btn-ghost:hover, .page-hero .btn-ghost:hover {
+.founder .btn-ghost:hover, .cta-banner .btn-ghost:hover, .page-hero .btn-ghost:hover {
     background: var(--white); color: var(--ink); border-color: var(--white);
 }
 
