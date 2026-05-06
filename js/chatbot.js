@@ -11,7 +11,7 @@
         },
         {
             keys: ['phone', 'call', 'number', 'contact'],
-            answer: "Call us at +1 (647) 588-4441 during business hours, or email info@induscanadacpa.ca. For an in-person consultation, please book ahead."
+            answer: "Call us at +1 (647) 819-0663 during business hours, or email info@induscanadacpa.ca. For an in-person consultation, please book ahead."
         },
         {
             keys: ['price', 'cost', 'fee', 'how much', 'rate', 'quote'],
@@ -75,7 +75,7 @@
         },
         {
             keys: ['book', 'appointment', 'consult', 'meeting', 'schedule'],
-            answer: "We offer free 30-minute discovery calls. Call +1 (647) 588-4441 or fill out the form on our Contact page and we'll reach out within 1 business day."
+            answer: "We offer free 30-minute discovery calls. Call +1 (647) 819-0663 or fill out the form on our Contact page and we'll reach out within 1 business day."
         },
         {
             keys: ['hi', 'hello', 'hey', 'good morning', 'good afternoon'],
@@ -103,7 +103,7 @@
             if (score > bestScore) { bestScore = score; best = item; }
         }
         if (best) return best.answer;
-        return "Great question — let me connect you with our team. Please call +1 (647) 588-4441 or email info@induscanadacpa.ca and we'll respond within 1 business day. You can also describe what you're looking for and I'll point you to the right service.";
+        return "Great question — let me connect you with our team. Please call +1 (647) 819-0663 or email info@induscanadacpa.ca and we'll respond within 1 business day. You can also describe what you're looking for and I'll point you to the right service.";
     }
 
     function init() {

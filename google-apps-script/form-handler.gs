@@ -61,6 +61,38 @@ function doPost(e) {
       name: "Indus Canada CPA Website"
     });
 
+    // Auto-reply to the client
+    if (email && email !== "Not provided") {
+      var clientSubject = "We've received your inquiry - Indus Canada CPA";
+      var clientBody = "Hello " + name + ",\n\n" +
+        "Thank you for reaching out to Indus Canada CPA. We have received your inquiry regarding " + service + ".\n\n" +
+        "Our team will review your message and get back to you within 1 business day.\n\n" +
+        "If you have an urgent matter, please call us at +1 (647) 819-0663.\n\n" +
+        "Best regards,\n" +
+        "Indus Canada CPA Team\n" +
+        "Unit #17 A, 7033 Telford Way, Mississauga ON L5S 1V4\n" +
+        "https://induscanadacpa.ca";
+
+      var clientHtmlBody = '<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">' +
+        '<div style="text-align: center; padding: 20px 0;">' +
+        '<h2 style="color: #1a2744;">Indus Canada CPA</h2>' +
+        '</div>' +
+        '<p>Hello <strong>' + name + '</strong>,</p>' +
+        '<p>Thank you for reaching out to us. We have successfully received your inquiry regarding <strong>' + service + '</strong>.</p>' +
+        '<p>One of our team members will review your details and get back to you within 1 business day.</p>' +
+        '<p>If your matter is urgent, please don\'t hesitate to call us directly at <strong>+1 (647) 819-0663</strong>.</p>' +
+        '<br>' +
+        '<p>Best regards,<br><strong>Indus Canada CPA Team</strong></p>' +
+        '<hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">' +
+        '<p style="font-size: 12px; color: #777;">Unit #17 A, 7033 Telford Way, Mississauga ON L5S 1V4<br><a href="https://induscanadacpa.ca" style="color: #c9a84c;">induscanadacpa.ca</a></p>' +
+        '</div>';
+
+      GmailApp.sendEmail(email, clientSubject, clientBody, {
+        htmlBody: clientHtmlBody,
+        name: "Indus Canada CPA"
+      });
+    }
+
     return ContentService
       .createTextOutput(JSON.stringify({ success: true }))
       .setMimeType(ContentService.MimeType.JSON);
