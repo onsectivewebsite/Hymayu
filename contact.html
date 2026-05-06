@@ -104,7 +104,20 @@
                 <h3>Send Us a Message</h3>
                 <p>We'll respond within 1 business day. For urgent CRA deadlines, please call us directly.</p>
 
-                <form id="contact-form">
+                <!-- Success State -->
+                <div id="form-success" style="display:none; text-align:center; padding: 3rem 1rem;">
+                    <div style="width:72px;height:72px;background:linear-gradient(135deg,#1a2744,#2a3f6e);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;">
+                        <i class="bi bi-check-lg" style="color:#c9a84c;font-size:2rem;"></i>
+                    </div>
+                    <h3 style="color:var(--navy);margin-bottom:0.5rem;">Message Sent!</h3>
+                    <p style="color:var(--gray-600);max-width:320px;margin:0 auto 1.5rem;">Thank you! We've received your message and will respond within 1 business day.</p>
+                    <button onclick="resetForm()" class="btn btn-primary" style="background:transparent;color:var(--navy);border:2px solid var(--navy);">
+                        <i class="bi bi-arrow-left"></i> Send Another Message
+                    </button>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contact-form" novalidate>
                     <div class="field-row">
                         <div class="field">
                             <label for="cf-name">Full Name *</label>
@@ -140,8 +153,11 @@
                         <label for="cf-message">Tell us about your situation *</label>
                         <textarea id="cf-message" name="message" rows="5" required placeholder="A few sentences about what you're looking for..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="bi bi-send-fill"></i> Send Message</button>
-                    <p class="form-note" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;"></p>
+                    <button type="submit" id="cf-submit" class="btn btn-primary" style="width:100%;gap:0.6rem;">
+                        <span id="cf-btn-text"><i class="bi bi-send-fill"></i> Send Message</span>
+                        <span id="cf-btn-loading" style="display:none;"><i class="bi bi-arrow-repeat" style="animation:spin 1s linear infinite;"></i> Sending…</span>
+                    </button>
+                    <p id="cf-error" style="display:none;margin-top:1rem;font-size:0.9rem;text-align:center;color:#c0392b;background:#fff5f5;padding:0.75rem 1rem;border-radius:6px;border:1px solid #f5c6cb;"></p>
                 </form>
             </div>
         </div>
@@ -213,5 +229,93 @@
 
 <script src="js/main.js"></script>
 <script src="js/chatbot.js"></script>
+<script>
+  // ─── Google Apps Script endpoint ────────────────────────────────────────────
+  // PASTE YOUR DEPLOYED WEB APP URL BELOW after following SETUP.md instructions
+  var APPS_SCRIPT_URL = "YOUR_APPS_SCRIPT_URL_HERE";
+  // ────────────────────────────────────────────────────────────────────────────
+
+  // Spin animation for loading state
+  var style = document.createElement('style');
+  style.textContent = '@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }';
+  document.head.appendChild(style);
+
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    var form    = this;
+    var btnText = document.getElementById('cf-btn-text');
+    var btnLoad = document.getElementById('cf-btn-loading');
+    var submit  = document.getElementById('cf-submit');
+    var errBox  = document.getElementById('cf-error');
+
+    // Basic validation
+    var name    = document.getElementById('cf-name').value.trim();
+    var phone   = document.getElementById('cf-phone').value.trim();
+    var email   = document.getElementById('cf-email').value.trim();
+    var service = document.getElementById('cf-service').value;
+    var message = document.getElementById('cf-message').value.trim();
+
+    if (!name || !phone || !email || !message) {
+      showError('Please fill in all required fields.');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showError('Please enter a valid email address.');
+      return;
+    }
+
+    // Check URL is configured
+    if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+      // Fallback: open mail client
+      var subject = encodeURIComponent('Contact Form: ' + name + ' — ' + service);
+      var body    = encodeURIComponent('Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nService: ' + service + '\n\nMessage:\n' + message);
+      window.location.href = 'mailto:info@induscanadacpa.ca?subject=' + subject + '&body=' + body;
+      return;
+    }
+
+    // Loading state
+    errBox.style.display = 'none';
+    btnText.style.display = 'none';
+    btnLoad.style.display = 'inline-flex';
+    submit.disabled = true;
+
+    try {
+      var res = await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify({ name, phone, email, service, message }),
+        headers: { 'Content-Type': 'text/plain' } // avoid CORS preflight
+      });
+      var json = await res.json();
+
+      if (json.success) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        throw new Error(json.error || 'Unknown error');
+      }
+    } catch (err) {
+      console.error(err);
+      showError('Something went wrong. Please email us directly at <a href="mailto:info@induscanadacpa.ca">info@induscanadacpa.ca</a> or call +1 (647) 588-4441.');
+    } finally {
+      btnText.style.display = 'inline-flex';
+      btnLoad.style.display = 'none';
+      submit.disabled = false;
+    }
+  });
+
+  function showError(msg) {
+    var errBox = document.getElementById('cf-error');
+    errBox.innerHTML = msg;
+    errBox.style.display = 'block';
+    errBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function resetForm() {
+    document.getElementById('contact-form').reset();
+    document.getElementById('contact-form').style.display = 'block';
+    document.getElementById('form-success').style.display = 'none';
+  }
+</script>
 </body>
 </html>
