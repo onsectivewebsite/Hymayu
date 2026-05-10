@@ -48,7 +48,7 @@ const BACKEND = {
 };
 
 (function () {
-    const BRANDS_KEY = 'indus_brands_v1';
+    const BRANDS_KEY = 'indus_brands_v2';
     const AUTH_KEY   = 'indus_admin_auth';
     const ADMIN_USER = 'admin';
     const ADMIN_PASS = 'indus2026';

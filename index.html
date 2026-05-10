@@ -32,22 +32,23 @@
 <!-- ===== Navigation ===== -->
 <nav class="nav">
     <div class="container nav-inner">
-        <a href="index.html" class="brand">
-            <img src="assets/logo.png" alt="Indus Canada CPA">
-            <div class="brand-text">
-                <strong>Indus Canada</strong>
-                <small>Chartered Professional Accountant</small>
-            </div>
-        </a>
+        <div class="brand-left">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.png" alt="Indus Canada CPA" class="logo-main">
+            </a>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="calculators.html">Calculators</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html" >About</a></li>
+            <li><a href="services.html" >Services</a></li>
+            <li><a href="calculators.html" >Calculators</a></li>
+            <li><a href="blog.html" >Blog</a></li>
+            <li><a href="contact.html" >Contact</a></li>
             <li><a href="contact.html" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Book Consultation</a></li>
         </ul>
+        <div class="brand-right">
+            <img src="assets/cpa_logo.png" alt="CPA Logo" class="logo-cpa">
+        </div>
         <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
 </nav>
@@ -79,7 +80,7 @@
                     </div>
                 </div>
                 <div class="portrait-frame">
-                    <img src="assets/humayun.jpg" alt="Dr. Humayun Chaudhary, Founder & Principal">
+                    <img src="assets/hero_new.png" alt="Dr. Humayun Chaudhary, Founder & Principal">
                 </div>
                 <div class="portrait-nameplate">
                     <strong>Dr. Humayun Chaudhary</strong>
@@ -277,28 +278,44 @@
 <!-- ===== About Preview ===== -->
 <section class="about-preview">
     <div class="container">
-        <div class="about-grid">
-            <div class="reveal">
-                <div class="about-img-wrap">
-                    <img src="assets/humayun.jpg" alt="Dr. Humayun Chaudhary, Founder of Indus Canada CPA">
-                    <div class="about-badge">
-                        <strong>20+</strong>
-                        <span>Years of Experience</span>
-                    </div>
-                </div>
-            </div>
-            <div class="about-content reveal">
+            <!-- Photo removed as per request -->
+            <div class="about-content reveal" style="grid-column: span 2; text-align: center; max-width: 900px; margin: 0 auto;">
                 <span class="eyebrow" style="color: var(--gold-dark); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;">About Indus Canada CPA</span>
                 <h2 style="margin-top: 0.6rem;">Trusted advisors for every stage of your financial journey</h2>
                 <p>At Indus Canada Chartered Professional Accountant, our greatest strength lies in the diverse skills and expertise of our team. With deep knowledge in accounting, taxation, financial planning, and business advisory, we are equipped to handle everything from routine bookkeeping to complex corporate strategies.</p>
                 <p>By combining technical expertise with modern tools and a client-focused approach, we provide innovative solutions that empower individuals and businesses to achieve financial clarity and long-term success.</p>
-                <div class="about-features">
+                <div class="about-features" style="justify-content: center; max-width: 800px; margin: 2rem auto 0;">
                     <div class="item"><i class="bi bi-check-circle-fill"></i><div><strong>Senior CPAs</strong><small>Direct access, no juniors</small></div></div>
                     <div class="item"><i class="bi bi-check-circle-fill"></i><div><strong>Modern Cloud Tools</strong><small>QBO, Xero, Dext, HubDoc</small></div></div>
                     <div class="item"><i class="bi bi-check-circle-fill"></i><div><strong>Year-Round Support</strong><small>Not just at tax time</small></div></div>
                     <div class="item"><i class="bi bi-check-circle-fill"></i><div><strong>Multilingual Service</strong><small>English, Urdu, Hindi, Punjabi</small></div></div>
                 </div>
-                <a href="about.html" class="btn btn-primary">Learn About Us <i class="bi bi-arrow-right"></i></a>
+
+                <!-- QuickBooks Badges -->
+                <div class="qb-badges" style="display: flex; justify-content: center; gap: 15px; margin-top: 2rem; flex-wrap: wrap;">
+                    <div class="qb-badge elite">
+                        <div class="qb-logo"><img src="assets/qb_badge.png" alt="QuickBooks Elite ProAdvisor" style="height: 50px;"></div>
+                        <div class="qb-tier">Elite</div>
+                        <div class="qb-label">ProAdvisor</div>
+                    </div>
+                    <div class="qb-badge platinum">
+                        <div class="qb-logo"><img src="assets/qb_badge.png" alt="QuickBooks Platinum ProAdvisor" style="height: 50px;"></div>
+                        <div class="qb-tier">Platinum</div>
+                        <div class="qb-label">ProAdvisor</div>
+                    </div>
+                    <div class="qb-badge gold">
+                        <div class="qb-logo"><img src="assets/qb_badge.png" alt="QuickBooks Gold ProAdvisor" style="height: 50px;"></div>
+                        <div class="qb-tier">Gold</div>
+                        <div class="qb-label">ProAdvisor</div>
+                    </div>
+                    <div class="qb-badge silver">
+                        <div class="qb-logo"><img src="assets/qb_badge.png" alt="QuickBooks Silver ProAdvisor" style="height: 50px;"></div>
+                        <div class="qb-tier">Silver</div>
+                        <div class="qb-label">ProAdvisor</div>
+                    </div>
+                </div>
+
+                <a href="about.html" class="btn btn-primary" style="margin-top: 2rem;">Learn About Us <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -434,10 +451,6 @@
             <div>
                 <a href="index.html" class="brand">
                     <img src="assets/logo.png" alt="Indus Canada CPA">
-                    <div class="brand-text">
-                        <strong>Indus Canada</strong>
-                        <small style="color: var(--gold);">Chartered Professional Accountant</small>
-                    </div>
                 </a>
                 <p>Trusted CPAs in Mississauga & GTA. 20+ years of expertise serving individuals, entrepreneurs, and corporations across Canada.</p>
                 <div class="footer-socials">
