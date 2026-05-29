@@ -48,24 +48,133 @@ const BACKEND = {
 };
 
 (function () {
-    const BRANDS_KEY = 'indus_brands_v2';
+    const BRANDS_KEY = 'indus_brands_v3';
     const AUTH_KEY   = 'indus_admin_auth';
     const ADMIN_USER = 'admin';
     const ADMIN_PASS = 'indus2026';
 
     const DEFAULT_BRANDS = [
-        { name: 'Sunridge Realty',     icon: 'bi-house-fill' },
-        { name: 'Maple & Co.',         icon: 'bi-tree-fill' },
-        { name: 'Northland Logistics', icon: 'bi-truck' },
-        { name: 'Stellar Pharma',      icon: 'bi-heart-pulse-fill' },
-        { name: 'Crescent Industries', icon: 'bi-gear-fill' },
-        { name: 'Apex Construction',   icon: 'bi-building' },
-        { name: 'BrightPath Academy',  icon: 'bi-mortarboard-fill' },
-        { name: 'Cedar Hospitality',   icon: 'bi-cup-hot-fill' },
-        { name: 'Heritage Capital',    icon: 'bi-bank2' },
-        { name: 'NovaCare Clinics',    icon: 'bi-heart-pulse-fill' },
-        { name: 'TechVentures',        icon: 'bi-cpu-fill' },
-        { name: 'Indus Travel Co.',    icon: 'bi-airplane-fill' }
+        // Real Estate
+        { name: 'Sunridge Realty',          icon: 'bi-house-fill' },
+        { name: 'Maple Grove Homes',        icon: 'bi-house-door-fill' },
+        { name: 'Northland Properties',     icon: 'bi-buildings-fill' },
+        { name: 'Lakeshore Realty Group',   icon: 'bi-water' },
+        { name: 'Crescent Heights Devs',    icon: 'bi-building' },
+        { name: 'Heritage Estate Partners', icon: 'bi-house-heart-fill' },
+        { name: 'Pinnacle Realty',          icon: 'bi-geo-alt-fill' },
+        { name: 'Skyline Properties',       icon: 'bi-building-up' },
+        { name: 'Trillium Real Estate',     icon: 'bi-flower2' },
+        { name: 'Aurora Land Co.',          icon: 'bi-sun' },
+        { name: 'Westwood Realty',          icon: 'bi-tree-fill' },
+        { name: 'Royal Oak Properties',     icon: 'bi-house-fill' },
+        { name: 'Granite Hill Estates',     icon: 'bi-house-door' },
+        { name: 'Pacific Coast Homes',      icon: 'bi-water' },
+        { name: 'Atlantic Bay Realty',      icon: 'bi-house-fill' },
+
+        // Tech
+        { name: 'TechVentures',             icon: 'bi-cpu-fill' },
+        { name: 'Quantum Labs',             icon: 'bi-cpu' },
+        { name: 'Neural Networks Inc.',     icon: 'bi-diagram-3-fill' },
+        { name: 'CloudPeak Systems',        icon: 'bi-cloud-fill' },
+        { name: 'ByteForge',                icon: 'bi-code-slash' },
+        { name: 'DataStream Analytics',     icon: 'bi-bar-chart-fill' },
+        { name: 'CodeNorth',                icon: 'bi-terminal-fill' },
+        { name: 'AppMosaic',                icon: 'bi-app-indicator' },
+        { name: 'SignalLab',                icon: 'bi-broadcast' },
+        { name: 'NorthByte Software',       icon: 'bi-laptop-fill' },
+        { name: 'Pixel Forge Studios',      icon: 'bi-display-fill' },
+        { name: 'Vector Robotics',          icon: 'bi-robot' },
+        { name: 'Orbit Cloud',              icon: 'bi-cloud' },
+        { name: 'StackCanada',              icon: 'bi-stack' },
+        { name: 'BinaryBlue Tech',          icon: 'bi-cpu-fill' },
+
+        // Healthcare
+        { name: 'Stellar Pharma',           icon: 'bi-heart-pulse-fill' },
+        { name: 'NovaCare Clinics',         icon: 'bi-heart-pulse-fill' },
+        { name: 'Greenleaf Medical',        icon: 'bi-bandaid-fill' },
+        { name: 'Vital Health Group',       icon: 'bi-activity' },
+        { name: 'Maple Wellness Centre',    icon: 'bi-tree-fill' },
+        { name: 'Aurora Dental',            icon: 'bi-emoji-smile-fill' },
+        { name: 'Pinepoint Pharmacy',       icon: 'bi-capsule' },
+        { name: 'Riverview Physio',         icon: 'bi-person-arms-up' },
+        { name: 'Lakeside Medical',         icon: 'bi-droplet-fill' },
+        { name: 'Sunrise Optometry',        icon: 'bi-eye-fill' },
+        { name: 'Heritage Vet Clinic',      icon: 'bi-heart-fill' },
+        { name: 'ClearMind Therapy',        icon: 'bi-brightness-high-fill' },
+
+        // Hospitality & Travel
+        { name: 'Cedar Hospitality',        icon: 'bi-cup-hot-fill' },
+        { name: 'Indus Travel Co.',         icon: 'bi-airplane-fill' },
+        { name: 'Maple Leaf Inns',          icon: 'bi-house-door-fill' },
+        { name: 'Lakeview Resorts',         icon: 'bi-tree' },
+        { name: 'Northern Lights Hotels',   icon: 'bi-stars' },
+        { name: 'Riverbend Lodge',          icon: 'bi-water' },
+        { name: 'Aurora Tours',             icon: 'bi-compass-fill' },
+        { name: 'Mountain Echo Resorts',    icon: 'bi-triangle-fill' },
+        { name: 'Coastal Catering Co.',     icon: 'bi-cup-fill' },
+        { name: 'Old Brewery Pub',          icon: 'bi-cup-straw' },
+
+        // Manufacturing & Construction
+        { name: 'Crescent Industries',      icon: 'bi-gear-fill' },
+        { name: 'Apex Construction',        icon: 'bi-building' },
+        { name: 'Trillium Steel',           icon: 'bi-tools' },
+        { name: 'Northland Logistics',      icon: 'bi-truck' },
+        { name: 'Ironwood Mills',           icon: 'bi-hammer' },
+        { name: 'Forge & Anvil Co.',        icon: 'bi-fire' },
+        { name: 'PolyTech Plastics',        icon: 'bi-droplet' },
+        { name: 'Granite Manufacturing',    icon: 'bi-bricks' },
+        { name: 'Borealis Engineering',     icon: 'bi-wrench-adjustable' },
+        { name: 'Provincial Foundries',     icon: 'bi-thermometer-high' },
+
+        // Finance & Insurance
+        { name: 'Heritage Capital',         icon: 'bi-bank2' },
+        { name: 'Northwind Investments',    icon: 'bi-graph-up-arrow' },
+        { name: 'Maple Trust Financial',    icon: 'bi-cash-coin' },
+        { name: 'Cornerstone Wealth',       icon: 'bi-piggy-bank-fill' },
+        { name: 'TrueNorth Insurance',      icon: 'bi-shield-check' },
+        { name: 'Beacon Advisors',          icon: 'bi-currency-exchange' },
+        { name: 'Indus Equity Partners',    icon: 'bi-coin' },
+        { name: 'Aurora Lending',           icon: 'bi-credit-card-2-front-fill' },
+        { name: 'Pacific Reserve Bank',     icon: 'bi-bank' },
+        { name: 'Cedar Asset Mgmt',         icon: 'bi-cash-stack' },
+
+        // Education
+        { name: 'BrightPath Academy',       icon: 'bi-mortarboard-fill' },
+        { name: 'Northern Lights Academy',  icon: 'bi-book-fill' },
+        { name: 'Maple Grove Schools',      icon: 'bi-pencil-fill' },
+        { name: 'Eastside Tutoring Co.',    icon: 'bi-book-half' },
+        { name: 'Aurora Learning Hub',      icon: 'bi-easel-fill' },
+
+        // Retail / F&B
+        { name: 'Maple & Co.',              icon: 'bi-tree-fill' },
+        { name: 'Boreal Outfitters',        icon: 'bi-bag-heart-fill' },
+        { name: 'Trillium Florals',         icon: 'bi-flower3' },
+        { name: 'Snowdrift Outdoor Gear',   icon: 'bi-snow' },
+        { name: 'Provincial Grocery',       icon: 'bi-basket-fill' },
+        { name: 'Northern Roast Coffee',    icon: 'bi-cup-hot' },
+        { name: 'Hudson Bay Imports',       icon: 'bi-box-seam' },
+        { name: 'Granite Bakery',           icon: 'bi-shop' },
+
+        // Energy & Resources
+        { name: 'Hydra Energy Co.',         icon: 'bi-lightning-charge-fill' },
+        { name: 'Aurora Solar',             icon: 'bi-brightness-high-fill' },
+        { name: 'North Star Mining',        icon: 'bi-stars' },
+        { name: 'BlueWater Utilities',      icon: 'bi-droplet-fill' },
+        { name: 'Greenfield Forestry',      icon: 'bi-tree-fill' },
+
+        // Media & Creative
+        { name: 'Northern Lens Media',      icon: 'bi-camera-reels-fill' },
+        { name: 'Aurora Studios',           icon: 'bi-palette-fill' },
+        { name: 'Beaver Print Press',       icon: 'bi-printer-fill' },
+        { name: 'SignalCast Media',         icon: 'bi-megaphone-fill' },
+        { name: 'Trillium Publications',    icon: 'bi-book' },
+
+        // Legal & Professional Services
+        { name: 'Aspen Law Group',          icon: 'bi-scale' },
+        { name: 'True North Legal',         icon: 'bi-briefcase-fill' },
+        { name: 'Hawthorn Advisors',        icon: 'bi-people-fill' },
+        { name: 'Cornerstone Notaries',     icon: 'bi-pen-fill' },
+        { name: 'Pinepoint Consulting',     icon: 'bi-clipboard-data-fill' }
     ];
 
     // ============= Backend helpers =============
