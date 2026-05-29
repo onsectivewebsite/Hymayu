@@ -284,8 +284,9 @@ p { color: var(--gray-600); }
 .hero-content { padding-right: 1rem; }
 
 .hero-eyebrow {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.7rem;
     color: var(--red);
     font-family: var(--font-sans);
@@ -294,6 +295,7 @@ p { color: var(--gray-600); }
     letter-spacing: 0.18em;
     text-transform: uppercase;
     margin-bottom: 1.8rem;
+    white-space: nowrap;
 }
 .hero-eyebrow::before {
     content: '';
