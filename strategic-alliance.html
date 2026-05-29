@@ -124,6 +124,106 @@
             scroll-margin-top: 100px;
         }
 
+        /* Collapsible "Learn More" sections per partner */
+        .alliance-extra {
+            display: none;
+            margin-top: 0;
+        }
+        .alliance-content.expanded .alliance-extra {
+            display: block;
+            animation: alliance-extra-fade 0.35s ease;
+        }
+        @keyframes alliance-extra-fade {
+            from { opacity: 0; transform: translateY(-6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .btn-learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            padding: 0.85rem 1.6rem;
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            border-radius: 2px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            transition: background var(--transition), transform var(--transition);
+        }
+        .btn-learn-more:hover {
+            background: var(--ink);
+            transform: translateY(-2px);
+        }
+        .btn-learn-more i {
+            transition: transform var(--transition);
+        }
+        .alliance-content.expanded .btn-learn-more i {
+            transform: rotate(180deg);
+        }
+
+        /* Saket-only inline Firm Overview inside expanded section */
+        .firm-overview-inline {
+            margin-top: 3rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        .firm-overview-inline .firm-overview-head {
+            margin-bottom: 1.5rem;
+        }
+        .firm-overview-inline .firm-overview-head .eyebrow {
+            color: var(--red);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .firm-overview-inline .firm-overview-head h3 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--ink);
+        }
+        .firm-overview-inline .firm-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .firm-overview-inline .firm-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition);
+        }
+        .firm-overview-inline .firm-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .firm-overview-inline .firm-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .firm-overview-inline .firm-card .caption {
+            padding: 1rem 1.25rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--ink);
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-100);
+        }
+        @media (max-width: 600px) {
+            .firm-overview-inline .firm-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 992px) {
             .alliance-grid {
                 grid-template-columns: 1fr;
@@ -202,32 +302,37 @@
                 <p>
                     Naveed Anwar is a skilled and results-driven lawyer licensed in Ontario and Alberta, with a broad practice spanning litigation, real estate transactions, contract drafting, and legal advisory services. With extensive experience in criminal law, refugee law, immigration appeals, and complex litigation, he provides strategic and practical solutions tailored to each client’s legal needs.
                 </p>
-                <p>
-                    Naveed represents clients before courts, administrative tribunals, the Refugee Board, CBSA hearings, and the Immigration Appeal Division, advocating effectively for their rights and interests. In his real estate practice, he assists individuals and businesses in navigating property transactions, contract negotiations, and dispute resolution with precision and efficiency.
-                </p>
-                <p>
-                    A member of the Law Society of Ontario, Naveed brings a multicultural perspective to his practice and is fluent in English, Punjabi, Hindi, and Urdu, ensuring accessibility and clear communication for diverse clients. His approach is defined by personalized legal strategies, attention to detail, and a commitment to achieving optimal outcomes.
-                </p>
-                <p>
-                    Whether defending clients in criminal proceedings, advocating for refugee protection, managing real estate transactions, or providing strategic legal counsel, Naveed upholds the highest standards of professionalism, integrity, and advocacy.
-                </p>
-                <div style="margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Litigation
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Real Estate
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Criminal Law
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Refugee &amp; Immigration Appeals
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Licensed in ON &amp; AB
+                <div class="alliance-extra">
+                    <p>
+                        Naveed represents clients before courts, administrative tribunals, the Refugee Board, CBSA hearings, and the Immigration Appeal Division, advocating effectively for their rights and interests. In his real estate practice, he assists individuals and businesses in navigating property transactions, contract negotiations, and dispute resolution with precision and efficiency.
+                    </p>
+                    <p>
+                        A member of the Law Society of Ontario, Naveed brings a multicultural perspective to his practice and is fluent in English, Punjabi, Hindi, and Urdu, ensuring accessibility and clear communication for diverse clients. His approach is defined by personalized legal strategies, attention to detail, and a commitment to achieving optimal outcomes.
+                    </p>
+                    <p>
+                        Whether defending clients in criminal proceedings, advocating for refugee protection, managing real estate transactions, or providing strategic legal counsel, Naveed upholds the highest standards of professionalism, integrity, and advocacy.
+                    </p>
+                    <div style="margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Litigation
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Real Estate
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Criminal Law
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Refugee &amp; Immigration Appeals
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Licensed in ON &amp; AB
+                        </div>
                     </div>
                 </div>
+                <button type="button" class="btn-learn-more" aria-expanded="false" data-label-more="Learn More" data-label-less="Show Less">
+                    <span class="lm-text">Learn More</span> <i class="bi bi-chevron-down"></i>
+                </button>
             </div>
         </div>
 
@@ -243,26 +348,49 @@
                 <p>
                     Saket Seth, LLB, is a dedicated Barrister &amp; Solicitor committed to delivering practical, timely, and client-centered legal solutions. With a strong foundation in Canadian law and years of experience across diverse legal areas, he brings a thoughtful, strategic, and detail-oriented approach to every case.
                 </p>
-                <p>
-                    Saket believes that every client deserves personalized attention, transparent guidance, and strong representation — regardless of the complexity of their matter. His practice reflects a balance of legal expertise, compassion, and professionalism, ensuring clients feel supported and informed through every stage of their legal journey.
-                </p>
-                <p>
-                    From corporate matters and family disputes to immigration issues, real estate transactions, and criminal defence, Saket’s goal is to help clients find clarity, achieve results, and move forward with confidence.
-                </p>
-                <div style="margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Real Estate
+                <div class="alliance-extra">
+                    <p>
+                        Saket believes that every client deserves personalized attention, transparent guidance, and strong representation — regardless of the complexity of their matter. His practice reflects a balance of legal expertise, compassion, and professionalism, ensuring clients feel supported and informed through every stage of their legal journey.
+                    </p>
+                    <p>
+                        From corporate matters and family disputes to immigration issues, real estate transactions, and criminal defence, Saket’s goal is to help clients find clarity, achieve results, and move forward with confidence.
+                    </p>
+                    <div style="margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Real Estate
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Family Law
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Business Law
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Immigration
+                        </div>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Family Law
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Business Law
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Immigration
+
+                    <!-- Saket's firm overview (his firm's resources) -->
+                    <div class="firm-overview-inline">
+                        <div class="firm-overview-head">
+                            <span class="eyebrow">Firm Overview</span>
+                            <h3>Law Office of Saket Seth — Resources</h3>
+                        </div>
+                        <div class="firm-grid">
+                            <div class="firm-card">
+                                <img src="assets/busness card.jpeg" alt="Saket Seth Business Card">
+                                <div class="caption">Legal Services Contact Information</div>
+                            </div>
+                            <div class="firm-card">
+                                <img src="assets/benifitsaket.jpeg" alt="Firm Benefit Flyer">
+                                <div class="caption">Strategic Legal Advantages &amp; Services</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <button type="button" class="btn-learn-more" aria-expanded="false" data-label-more="Learn More" data-label-less="Show Less">
+                    <span class="lm-text">Learn More</span> <i class="bi bi-chevron-down"></i>
+                </button>
             </div>
         </div>
 
@@ -278,44 +406,31 @@
                 <p>
                     Erum Farooqi is a trusted Financial Planner who partners with individuals, families, and business owners to build personalized strategies for long-term financial well-being. Her practice spans retirement planning, investment guidance, insurance, education savings, and intergenerational wealth transfer.
                 </p>
-                <p>
-                    Erum takes the time to understand each client's goals, risk tolerance, and life stage — then translates that into a clear, actionable plan. She works closely with the Indus Canada CPA team so tax efficiency, accounting, and financial planning move in the same direction.
-                </p>
-                <p>
-                    Whether you're preparing for retirement, protecting your family, structuring an estate, or aligning investments with a new business venture, Erum brings disciplined, client-first guidance to every conversation.
-                </p>
-                <div style="margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Retirement Planning
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Investments
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Insurance
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
-                        <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Estate Planning
+                <div class="alliance-extra">
+                    <p>
+                        Erum takes the time to understand each client's goals, risk tolerance, and life stage — then translates that into a clear, actionable plan. She works closely with the Indus Canada CPA team so tax efficiency, accounting, and financial planning move in the same direction.
+                    </p>
+                    <p>
+                        Whether you're preparing for retirement, protecting your family, structuring an estate, or aligning investments with a new business venture, Erum brings disciplined, client-first guidance to every conversation.
+                    </p>
+                    <div style="margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Retirement Planning
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Investments
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Insurance
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-weight: 600;">
+                            <i class="bi bi-check-circle-fill" style="color: var(--red);"></i> Estate Planning
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Resources Section -->
-        <div class="resource-section reveal">
-            <div class="section-head" style="text-align: left; margin-bottom: 2rem;">
-                <span class="eyebrow">Resources & Information</span>
-                <h2>Firm Overview</h2>
-            </div>
-            <div class="resource-grid">
-                <div class="resource-card">
-                    <img src="assets/busness card.jpeg" alt="Saket Seth Business Card">
-                    <div class="caption">Legal Services Contact Information</div>
-                </div>
-                <div class="resource-card">
-                    <img src="assets/benifitsaket.jpeg" alt="Firm Benefit Flyer">
-                    <div class="caption">Strategic Legal Advantages & Services</div>
-                </div>
+                <button type="button" class="btn-learn-more" aria-expanded="false" data-label-more="Learn More" data-label-less="Show Less">
+                    <span class="lm-text">Learn More</span> <i class="bi bi-chevron-down"></i>
+                </button>
             </div>
         </div>
 
@@ -393,5 +508,44 @@
 
 <script src="js/main.js"></script>
 <script src="js/chatbot.js"></script>
+<script>
+    // Learn More toggle for each partner profile
+    (function () {
+        const buttons = document.querySelectorAll('.btn-learn-more');
+        buttons.forEach((btn) => {
+            const content = btn.closest('.alliance-content');
+            const label = btn.querySelector('.lm-text');
+            const moreText = btn.dataset.labelMore || 'Learn More';
+            const lessText = btn.dataset.labelLess || 'Show Less';
+
+            const setState = (expanded) => {
+                content.classList.toggle('expanded', expanded);
+                btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                if (label) label.textContent = expanded ? lessText : moreText;
+            };
+
+            btn.addEventListener('click', () => {
+                setState(!content.classList.contains('expanded'));
+            });
+        });
+
+        // Auto-expand the partner targeted by URL hash (#saket, #erum, #naveed)
+        function expandFromHash() {
+            const hash = window.location.hash.replace('#', '');
+            if (!hash) return;
+            const target = document.getElementById(hash);
+            if (!target) return;
+            const content = target.querySelector('.alliance-content');
+            const btn = content && content.querySelector('.btn-learn-more');
+            if (!content || !btn) return;
+            content.classList.add('expanded');
+            btn.setAttribute('aria-expanded', 'true');
+            const label = btn.querySelector('.lm-text');
+            if (label) label.textContent = btn.dataset.labelLess || 'Show Less';
+        }
+        expandFromHash();
+        window.addEventListener('hashchange', expandFromHash);
+    })();
+</script>
 </body>
 </html>
