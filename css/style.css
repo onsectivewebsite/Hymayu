@@ -1817,6 +1817,129 @@ section { padding: 7rem 0; }
 .qb-badge.silver { border-top: 4px solid #C0C0C0; }
 .qb-badge.silver .qb-tier { color: #C0C0C0; }
 
+/* ============ STRATEGIC PARTNERS GRID (Home) ============ */
+.partners-section {
+    background: var(--white);
+    border-top: 1px solid var(--gray-100);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.25rem;
+    margin-top: 3rem;
+}
+
+.partner-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    position: relative;
+}
+
+.partner-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--red);
+    z-index: 2;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+}
+
+.partner-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--red-light, var(--gray-300));
+}
+
+.partner-card:hover::before {
+    transform: scaleX(1);
+}
+
+.partner-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: var(--gray-100);
+}
+
+.partner-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.6s ease;
+}
+
+.partner-card:hover .partner-photo img {
+    transform: scale(1.04);
+}
+
+.partner-body {
+    padding: 1.75rem 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.partner-role {
+    color: var(--red);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.partner-body h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.9rem;
+    color: var(--ink);
+    line-height: 1.2;
+}
+
+.partner-body p {
+    color: var(--gray-600);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.partner-link {
+    color: var(--red);
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    transition: gap var(--transition);
+}
+
+.partner-card:hover .partner-link {
+    gap: 0.75rem;
+}
+
+@media (max-width: 992px) {
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 /* ============ STRATEGIC ALLIANCE (Home) ============ */
 .alliance-home {
     background: var(--white);
