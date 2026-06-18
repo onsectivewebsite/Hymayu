@@ -2137,3 +2137,82 @@ section { padding: 7rem 0; }
     .plan-detail .plan-card { position: static; max-width: 420px; }
     .plan-includes { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   NAV DROPDOWNS
+   ============================================================ */
+.nav-links .has-dropdown { position: relative; }
+.nav-links .dd-toggle i { font-size: 0.65rem; margin-left: 0.25rem; transition: transform 0.25s ease; }
+.nav-links .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 230px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg, 0 16px 40px rgba(15,16,20,0.14));
+    padding: 0.5rem;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 200;
+}
+.nav-links .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-links .has-dropdown:hover .dd-toggle i { transform: rotate(180deg); }
+.nav-links .dropdown li { display: block; }
+.nav-links .dropdown a {
+    display: block;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    border-radius: 7px;
+    white-space: nowrap;
+}
+.nav-links .dropdown a:hover { background: var(--red-pale); color: var(--red); }
+.nav-links .dropdown a.active { color: var(--red); }
+.nav-links .dropdown a.active::after, .nav-links .dd-toggle.active::after { display: none; }
+.nav-links .dd-toggle.active { color: var(--red); }
+
+/* ============================================================
+   TEAM GRID (Our Team page)
+   ============================================================ */
+.team-section { padding: 5rem 0 1rem; }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.team-member {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md, 14px);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex; flex-direction: column;
+}
+.team-member:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg, 0 18px 40px rgba(15,16,20,0.12)); }
+.team-photo { aspect-ratio: 4 / 5; overflow: hidden; background: var(--gray-100); }
+.team-photo img { width: 100%; height: 100%; object-fit: cover; }
+.team-info { padding: 1.5rem 1.4rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
+.team-info h3 { font-family: var(--font-sans); font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; }
+.team-role { color: var(--red); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.9rem; }
+.team-info p { color: var(--gray-600); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.2rem; flex: 1; }
+.team-info .more { color: var(--red); font-weight: 600; font-size: 0.85rem; }
+.team-info .more i { font-size: 0.8rem; }
+
+@media (max-width: 900px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
+
+/* Mobile: dropdowns become inline/expanded inside the slide-in panel */
+@media (max-width: 768px) {
+    .nav-links .dropdown {
+        position: static;
+        opacity: 1; visibility: visible; transform: none;
+        box-shadow: none; border: none; background: transparent;
+        padding: 0 0 0 1rem; min-width: 0;
+    }
+    .nav-links .dropdown a { padding: 0.9rem 0; font-size: 1rem; border-bottom: 1px solid var(--gray-50); }
+    .nav-links .dd-toggle i { display: none; }
+}
