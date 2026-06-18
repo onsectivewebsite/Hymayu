@@ -1105,8 +1105,8 @@ section { padding: 7rem 0; }
 }
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-    gap: 4rem;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr;
+    gap: 2.75rem;
     padding-bottom: 4rem;
 }
 .footer .brand img { background: var(--white); padding: 0.5rem 0.9rem; border-radius: var(--radius-sm); }
