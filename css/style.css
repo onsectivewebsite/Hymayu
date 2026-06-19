@@ -2141,6 +2141,9 @@ section { padding: 7rem 0; }
 /* ============================================================
    NAV DROPDOWNS
    ============================================================ */
+/* Lift the whole nav into its own high stacking context so dropdowns
+   always paint above page sections (.hero/.page-hero use z-index 2-3). */
+nav.nav { position: relative; z-index: 1000; }
 .nav-links .has-dropdown { position: relative; }
 .nav-links .dd-toggle { display: inline-flex; align-items: center; cursor: pointer; }
 .nav-links .dd-toggle i { font-size: 0.62rem; margin-left: 0.3rem; transition: transform 0.25s ease; }
