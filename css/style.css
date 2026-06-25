@@ -163,7 +163,7 @@ p { color: var(--gray-600); }
 }
 
 .brand { display: flex; align-items: center; flex-shrink: 0; }
-.brand img { height: 76px; width: auto; flex-shrink: 0; object-fit: contain; mix-blend-mode: multiply; }
+.brand img { height: 76px; width: auto; flex-shrink: 0; object-fit: contain; }
 
 .brand-text small { color: var(--gold-dark); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
 
