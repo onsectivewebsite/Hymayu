@@ -2407,6 +2407,13 @@ nav.nav.scrolled { box-shadow: 0 6px 24px rgba(31, 28, 22, 0.08); background: rg
     letter-spacing: 0.01em;
 }
 
+/* Alternating team profile rows (image left default, reversed = image right) */
+.about-grid.reverse { grid-template-columns: 1.1fr 1fr; }
+@media (max-width: 1024px) {
+    .about-grid.reverse { grid-template-columns: 1fr; }
+    .about-grid.reverse .about-img-wrap { order: -1; }
+}
+
 /* ============================================================
    TEAM GRID (Our Team page)
    ============================================================ */
