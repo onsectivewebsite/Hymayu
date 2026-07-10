@@ -4,15 +4,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu
     const toggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const mqMobile = window.matchMedia('(max-width: 1024px)');
     if (toggle && navLinks) {
+        const collapseDropdowns = () =>
+            navLinks.querySelectorAll('.has-dropdown.open').forEach(d => d.classList.remove('open'));
+        const closeMenu = () => {
+            toggle.classList.remove('open');
+            navLinks.classList.remove('open');
+            collapseDropdowns();
+        };
         toggle.addEventListener('click', () => {
             toggle.classList.toggle('open');
-            navLinks.classList.toggle('open');
+            const isOpen = navLinks.classList.toggle('open');
+            if (!isOpen) collapseDropdowns();
         });
+        // On mobile the parent link acts as an accordion toggle instead of navigating
+        navLinks.querySelectorAll('.has-dropdown > .dd-toggle').forEach(dd => {
+            dd.addEventListener('click', (e) => {
+                if (!mqMobile.matches) return;
+                e.preventDefault();
+                dd.closest('.has-dropdown').classList.toggle('open');
+            });
+        });
+        // Any real navigation link closes the whole menu
         navLinks.querySelectorAll('a').forEach(a => {
             a.addEventListener('click', () => {
-                toggle.classList.remove('open');
-                navLinks.classList.remove('open');
+                if (mqMobile.matches && a.classList.contains('dd-toggle')) return;
+                closeMenu();
             });
         });
     }

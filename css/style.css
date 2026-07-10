@@ -2449,20 +2449,28 @@ nav.nav.scrolled { box-shadow: 0 6px 24px rgba(31, 28, 22, 0.08); background: rg
 @media (max-width: 900px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
 
-/* Mobile: dropdowns become inline/expanded inside the slide-in panel */
-@media (max-width: 768px) {
+/* Mobile: dropdowns become collapsible accordions inside the slide-in panel.
+   Matches the hamburger breakpoint (1024px) so the 769–1024px range behaves too. */
+@media (max-width: 1024px) {
     .nav-links .dropdown {
         position: static;
         opacity: 1; visibility: visible; transform: none;
         box-shadow: none; border: none; background: transparent;
         padding: 0 0 0 1rem; min-width: 0;
         top: auto; left: auto;
+        /* Collapsed by default — expands only when its parent gets .open */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.32s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    .nav-links .has-dropdown.open .dropdown { max-height: 60vh; }
     .nav-links .dropdown::before { display: none; }
     .nav-links .has-dropdown::after { display: none; }
     .nav-links .dropdown a { padding: 0.9rem 0; font-size: 1rem; border-bottom: 1px solid var(--gray-50); }
     .nav-links .dropdown a:hover, .nav-links .dropdown a:focus-visible { padding-left: 0; background: transparent; }
-    .nav-links .dd-toggle i { display: none; }
+    /* Keep the chevron visible as an accordion affordance; flip it when open */
+    .nav-links .dd-toggle i { display: inline-flex; font-size: 0.7rem; transition: transform 0.25s ease; }
+    .nav-links .has-dropdown.open > .dd-toggle i { transform: rotate(180deg); }
 }
 
 /* Accessibility: visible keyboard focus rings (do not remove) */
